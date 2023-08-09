@@ -29,6 +29,8 @@ class QuizApp:
         self.menuHeader()
         
         while(True):
+            print()
+            print("----------------------------------------")
             selection = input("Selection: ")
             if len(selection) == 0:
                 self.menuSelectionError()
