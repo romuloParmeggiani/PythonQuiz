@@ -45,10 +45,19 @@ class QuizManager:
 
     # prints the results of the most recently taken quiz
     def print_results(self):
-        pass
+        self.the_quiz.print_results(self.quiztaker)
 
     # save the results of the most recent quiz to a file
     # the file is named using the current date as
     # QuizResults_YYYY_MM_DD_N (N is incremented until unique)
     def save_results(self):
-        pass
+        today = datetime.datetime.now()
+        filename = f"QuizResults_{today.year}_{today.month}_{today.day}.txt"
+        n = 1
+        # if the file name already exists, then add a digit to the end until it's unique
+        while(os.path.exists(filename)):
+            filename = f"QuizResults_{today.year}_{today.month}_{today.day}_{n}.txt"
+            n = n + 1
+
+        with open(filename, "w") as f:
+            self.the_quiz.print_results(self.quiztaker, f)
