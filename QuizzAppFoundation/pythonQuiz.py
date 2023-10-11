@@ -85,7 +85,7 @@ class QuizApp:
                 self.menu_error()
 
     def run(self):
-        # Execute the startup routine - ask for name, print greeting, etc
+        # Execute the startup routine - ask for name, print greeting
         self.startup()
         # Start the main program menu and run until the user exits
         self.menu()
