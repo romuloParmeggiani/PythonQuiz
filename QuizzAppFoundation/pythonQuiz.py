@@ -1,5 +1,6 @@
 from quizManager import QuizManager
 
+
 class QuizApp:
     QUIZ_FOLDER = "Quizzes"
 
@@ -7,7 +8,7 @@ class QuizApp:
         self.username = ""
         self.qm = QuizManager(QuizApp.QUIZ_FOLDER)
 
-    def startup(self):        
+    def startup(self):
         # print the greeting at startup
         self.greeting()
 
@@ -15,7 +16,7 @@ class QuizApp:
         self.username = input("What is your name? ")
         print(f"Welcome, {self.username}!")
         print()
-    
+
     def greeting(self):
         print("-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~")
         print("~~~~~~ Welcome to PyQuiz! ~~~~~~")
@@ -89,6 +90,7 @@ class QuizApp:
         self.startup()
         # Start the main program menu and run until the user exits
         self.menu()
+
 
 if __name__ == "__main__":
     app = QuizApp()

@@ -1,6 +1,7 @@
 import datetime
 import sys
 
+
 class Quiz:
     def __init__(self):
         self.name = ""
@@ -49,7 +50,7 @@ class Quiz:
             print("------------------------------------------------\n")
 
         # return the results
-        return (self.score, self.correct_count, self.total_points)
+        return self.score, self.correct_count, self.total_points
 
 
 class Question:
@@ -65,16 +66,16 @@ class QuestionTF(Question):
         super().__init__()
 
     def ask(self):
-        while (True):
+        while True:
             print(f"(T)rue or (F)alse: {self.text}")
             response = input("? ")
 
-            if (len(response) == 0):
+            if len(response) == 0:
                 print("Sorry, that's not a valid response. Please try again")
                 continue
 
             response = response.lower()
-            if (response[0] != "t" and response[0] != "f"):
+            if response[0] != "t" and response[0] != "f":
                 print("Sorry, that's not a valid response. Please try again")
                 continue
 
@@ -90,14 +91,14 @@ class QuestioncMC(Question):
         self.answers = []
 
     def ask(self):
-        while (True):
+        while True:
             print(self.text)
             for a in self.answers:
                 print(f"{a.name}) {a.text}")
 
             response = input("? ")
 
-            if (len(response) == 0):
+            if len(response) == 0:
                 print("Sorry, that's not a valid response. Please try again")
                 continue
 

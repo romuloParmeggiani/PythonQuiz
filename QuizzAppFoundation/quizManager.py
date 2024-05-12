@@ -17,7 +17,7 @@ class QuizManager:
         self.quiztaker = ""
 
         # make sure that the quiz folder exists
-        if (os.path.exists(quizfolder) == False):
+        if os.path.exists(quizfolder) == False:
             raise FileNotFoundError("The quiz folder doesn't seem to exist!")
 
         # build the list of quizzes
@@ -55,7 +55,7 @@ class QuizManager:
         filename = f"QuizResults_{today.year}_{today.month}_{today.day}.txt"
         n = 1
         # if the file name already exists, then add a digit to the end until it's unique
-        while(os.path.exists(filename)):
+        while os.path.exists(filename):
             filename = f"QuizResults_{today.year}_{today.month}_{today.day}_{n}.txt"
             n = n + 1
 
